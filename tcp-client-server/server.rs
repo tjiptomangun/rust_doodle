@@ -11,15 +11,16 @@ fn main() {
         let listener = TcpListener::bind("127.0.0.1:9123").unwrap();
         println!("listening started, ready to accept");
         for stream in listener.incoming() {
-//            thread::spawn(move || { 
-                let mut wr_stream = stream.unwrap();
-                let mut rd_stream = wr_stream.try_clone().unwrap();
-//                wr_stream.write(b"Hello World\n").unwrap();
-//                wr_stream.flush();
+            thread::spawn(move || { 
+                //let mut wr_stream = stream.unwrap();
+                let mut stream = stream.unwrap();
+//                let mut rd_stream = wr_stream.try_clone().unwrap();
+                stream.write(b"Hello World\n").unwrap();
+                stream.flush();
                 let mut line = String::new();
-//                loop {
-//                    match rd_stream.read_to_string(&mut line) {
-                    match rd_stream.read(&mut line) {
+                loop {
+                    match stream.read_to_string(&mut line) {
+//                    match stream.read(&mut line) {
 
                         Ok(_) => {
                             println!("client says {}", line);
@@ -29,10 +30,9 @@ fn main() {
                         }
                         
                     }
-                //}
+                }
                
                 
- //           });
-        }
-        
+             });
+        } 
 }
