@@ -1,0 +1,15 @@
+[package]
+name = "hello_android"
+version = "0.1.0"
+authors = ["hanky <hanky.adhi.chandra@ansvia.com>"]
+
+[package.metadata.android]
+# build_targets = [ "arm-linux-androideabi", "armv7-linux-androideabi" ]
+build_targets = [ "arm-linux-androideabi"]
+#build_targets = [ "armv7-linux-androideabi" ]
+# build_targets = ["i686-linux-android"]
+[dependencies]
+
+
+[dependencies.android_glue]
+path = "../glue"

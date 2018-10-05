@@ -1,0 +1,11 @@
+[package]
+name = "hello_no_glue"
+version = "0.1.0"
+authors = ["hanky <hanky.adhi.chandra@ansvia.com>"]
+
+[package.metadata.android]
+build_targets = [ "arm-linux-androideabi"]
+
+[dependencies]
+
+
