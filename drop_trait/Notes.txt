@@ -1,0 +1,5 @@
+std::ops::Drop
+
+Used to run some code when a value goes out of scope. This is sometimes called a 'destructor'.
+When a value goes out of scope, it will have its drop method called if its type implements Drop. 
+Then, any fields the value contains will also be dropped recursively.
