@@ -1,0 +1,10 @@
+[package]
+name = "bindings"
+version = "0.1.0"
+authors = ["hanky <hanky.adhi.chandra@ansvia.com>"]
+build = "build.rs"
+
+[build-dependencies]
+bindgen = "0.26.3"
+
+[dependencies]
