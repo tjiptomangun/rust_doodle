@@ -6,7 +6,7 @@ use std::path::PathBuf;
 fn main() {
     //Tell cargo to tell rustc to link the system bzip2
     //shared library
-    
+
     println!("cargo:rustc-link-lib=bz2");
 
     //Tell bindgen::Builder is the main entry point
@@ -15,7 +15,7 @@ fn main() {
     let bindings = bindgen::Builder::default()
         //Do not generate unstable Rust code that
         //requires a nightly rustc and enabling
-        //unstable features 
+        //unstable features
         //The input header we would like to generate
         //bindings for
         .header("wrapper.h")
@@ -30,5 +30,4 @@ fn main() {
     bindings
         .write_to_file(out_path.join("bindings.rs"))
         .expect("Couldn't write bindings!");
-         
 }
