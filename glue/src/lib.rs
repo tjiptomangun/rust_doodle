@@ -1,6 +1,6 @@
 #![cfg(target_os = "android")]
 
-extern {
+extern "C" {
     fn cargo_apk_injected_glue_get_native_window() -> *const c_void;
     fn cargo_apk_injected_glue_add_sender(sender: *mut ());
     fn cargo_apk_injected_glue_add_sender_missing(sender: *mut ());
@@ -38,7 +38,7 @@ pub enum Event {
     Pause,
     Stop,
     Destroy,
-    Wake
+    Wake,
 }
 
 /// Data about a motion event.
@@ -142,7 +142,7 @@ pub fn load_asset(filename: &str) -> Result<Vec<u8>, AssetError> {
     }
 }
 
-// Wakes the event poll asynchronously and sends a Event::Wake event to the senders. 
+// Wakes the event poll asynchronously and sends a Event::Wake event to the senders.
 // This method can be called on any thread. This method returns immediately.
 #[inline]
 pub fn wake_event_loop() {
