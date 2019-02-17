@@ -1,0 +1,8 @@
+[package]
+name = "guessing_random"
+version = "0.1.0"
+authors = ["henky"]
+edition = "2018"
+
+[dependencies]
+rand = "0.3.14"
