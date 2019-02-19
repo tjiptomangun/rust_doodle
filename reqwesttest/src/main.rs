@@ -12,6 +12,7 @@ use hyper::header::HeaderMap;
 use reqwest::header::CONTENT_TYPE;
 use reqwest::header::CONTENT_LENGTH;
 
+//curl -i -H "Content-Type: image/jpeg" -H "Slug: photo.jpg" -XPOST http://localhost:8888/image --data-binary "@Transactions.jpg"
 
 use reqwest::Response;
 use hyper::header::AsHeaderName;
