@@ -1,0 +1,11 @@
+[package]
+name = "self_transmute"
+version = "0.1.0"
+authors = ["hanky <hanky.adhi.chandra@ansvia.com>"]
+
+[dependencies]
+libc = "0.2.0"
+
+[[bin]]
+name = "self_transmute"
+path = "self_transmute.rs"

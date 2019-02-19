@@ -57,7 +57,7 @@ fn main() {
 		//https://github.com/seanmonstar/reqwest/blob/master/examples/simple.rs
 		println!("Headers:\n{:?}", response.headers());
 
-		let hloc = response.headers().get("Location").unwrap();		
+		let hloc = response.headers().get("Location").unwrap();
 		println!("hloc  {:?}", hloc);
 
 		
