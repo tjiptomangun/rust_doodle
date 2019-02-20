@@ -1,0 +1,8 @@
+[package]
+name = "snowflatetest"
+version = "0.1.0"
+authors = ["hanky <hanky.adhi.chandra@ansvia.com>"]
+edition = "2018"
+
+[dependencies]
+snowflake-multi-threaded = "0.1.0"

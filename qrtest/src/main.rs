@@ -14,7 +14,12 @@ use qrcode::QrCode;
 use image::Luma;
 use image::ColorType;
 use reqwest::Response;
+use std::str;
 
+struct FooBar<'a> {
+	foo:String,
+	burl: &'a str,
+}
 
 
 //https://stackoverflow.com/questions/50731636/how-do-i-encode-a-rust-piston-image-and-get-the-result-in-memory
@@ -30,6 +35,12 @@ fn main() {
 		// 	Err(err) =>
 		// 		panic!("Cannot encode {}", err),
 		// };
+
+		let mut foo_bar = FooBar{
+			foo: "foo".to_string(),
+			burl: "",
+		};
+
 		let code = QrCode::new(arg1.as_bytes()).unwrap();
 
 		let images = code.render::<Luma<u8>>().build();
@@ -70,7 +81,11 @@ fn main() {
 		println!("Headers:\n{:?}", response.headers());
 
 		let hloc = response.headers().get("Location").unwrap();
-		println!("hloc  {:?}", hloc);
+
+		foo_bar.burl = str::from_utf8(hloc.as_bytes()).unwrap();
+
+		// println!("hloc  {:?}", hloc);
+		println!("foo_bar.burl  {:?}", foo_bar.burl);
 
 
 	}
