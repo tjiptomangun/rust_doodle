@@ -1,0 +1,10 @@
+[package]
+name = "reqwesttest"
+version = "0.1.0"
+authors = ["hanky <hanky.adhi.chandra@ansvia.com>"]
+edition = "2018"
+
+[dependencies]
+reqwest = "0.9.9"
+hyper = "*"
+qrcode = { version = "0.8", default-features = false }

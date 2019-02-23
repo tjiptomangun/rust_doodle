@@ -1,0 +1,9 @@
+[package]
+name = "twills"
+version = "0.1.0"
+authors = ["hanky <hanky.adhi.chandra@ansvia.com>"]
+edition = "2018"
+
+[dependencies]
+twilio-async =  "0.2.0"
+tokio-core = "0.1"
