@@ -11,6 +11,7 @@ reference to method or other scope.
 On &mut references
 The rules about borrowing in Rust:
 1. A borrow must last for a scope no greater than the owner.
+	//Also true to me: Ownership must live longer than borrowship
 2. You may have one or the other of these two kinds of borrows,
    but not both at the same time:
    a. One or more references (&T) to a resource
