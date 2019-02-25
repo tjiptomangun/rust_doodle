@@ -45,7 +45,7 @@ fn main() {
 
 		let images = code.render::<Luma<u8>>().build();
 
-		let mut buf:Vec<u8> = Vec::new();		
+		let mut buf:Vec<u8> = Vec::new();
 		
 		let dims = images.dimensions();
 
@@ -78,7 +78,7 @@ fn main() {
 				},
 			};
 
-		println!("Headers:\n{:?}", response.headers());
+		println!("response:\n{:?}", response);
 
 		let hloc = response.headers().get("Location").unwrap();
 

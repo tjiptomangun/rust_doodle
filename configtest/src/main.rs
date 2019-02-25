@@ -13,4 +13,6 @@ fn main() {
 	let settings = Settings::new();
 
 	println!("{:?}", settings);
+
+	let asettings = Settings::new().unwrap();		
 }

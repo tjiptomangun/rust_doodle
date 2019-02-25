@@ -1,5 +1,6 @@
 use std::env;
 use config::{ConfigError, Config, File, Environment};
+use std::collections::HashMap;
 
 
 #[derive(Debug, Deserialize)]
