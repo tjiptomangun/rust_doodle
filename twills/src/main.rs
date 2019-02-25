@@ -9,7 +9,9 @@ use twilio_async::{
 };
 
 fn main() -> Result<(), Box<Error>> {
-    let twilio = Twilio::new(env::var("TWILIO_SID")?, env::var("TWILIO_TOKEN")?)?;
+	let tw_sid = env::var("TWILIO_SID").expect("absent TWILIO_SID");
+	let tw_tok = env::var("TWILIO_TOKEN").expect("absent TWILIO_TOKEN");
+    let twilio = Twilio::new(tw_sid, tw_tok)?;
     let mut core = Core::new()?;    
 
     //sending a message 
@@ -20,7 +22,7 @@ fn main() -> Result<(), Box<Error>> {
 fn try_msg(core: &mut Core, twilio: Twilio) -> Result<(), Box<Error>> {
         let num = env::var("OUTBOUND_NUM")?;
 
-        let (_, resp) = core.run(twilio.send_msg("+18572148664",&num, "Hello World").run())?;
+        let (_, resp) = core.run(twilio.send_msg(&num,"+6281398127441", "Hello World").run())?;
 
         println!("{:?}", resp);
 

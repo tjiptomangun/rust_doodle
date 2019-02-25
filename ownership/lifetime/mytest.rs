@@ -1,4 +1,6 @@
 //does not work
+//^ help: consider giving it a 'static lifetime: `&'static` 
+//this function's return type contains a borrowed value, but there is no value for it to be borrowed from
 //fn terong()-> &str {
 //	 "terong" 
 //}
@@ -30,8 +32,7 @@ fn gori(instr: String) -> String {
 	let b = format!("{} {}", a , instr);
 	let c = format!("{} {}", a , instr);
 	b
-}
-
+} 
 
 fn goreng(instr1: &str, instr2: &str) {
 	println!("{} goreng {}", instr1, instr2);

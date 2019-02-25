@@ -12,7 +12,7 @@ fn main() {
     stdin().read_line(&mut title).unwrap();
     let title = &title[..(title.len() -1 )]; //Drop new line characted
 
-    println!("\nOk! Let's write{} (Press {} when finished)\n", title, EOF);
+    println!("\nOk! Let's write {} (Press {} when finished)\n", title, EOF);
     let mut body = String::new();
     stdin().read_to_string(&mut body).unwrap();
 
