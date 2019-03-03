@@ -35,12 +35,12 @@ fn use_after_free() {
 	let y : &i32;
 	{
 		let x = 5;
-		y = &x;
+	//	y = &x;
 	}//x dropped while still borrowed (by y)
 	//y is still using x whilst x has already freed because the scope x declared
 	//in has already end
 
-	println!("{}", y);
+	//println!("{}", y);
 }
 
 fn use_after_free2() {
