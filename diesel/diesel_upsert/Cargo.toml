@@ -1,0 +1,10 @@
+[package]
+name = "diesel_upsert"
+version = "0.1.0"
+authors = ["hanky <hanky.adhi.chandra@ansvia.com>"]
+edition = "2018"
+
+[dependencies]
+diesel = { version = "=1.4.1", default-features = false, features = ["32-column-tables", "postgres", "chrono"]}
+dotenv = "0.9.0"
+chrono = { version = "0.4", features = ["serde"]}
