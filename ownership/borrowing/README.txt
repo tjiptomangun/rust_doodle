@@ -1,3 +1,6 @@
+source 
+https://doc.rust-lang.org/1.8.0/book/references-and-borrowing.html
+
 Instead of moving that cause ownership of a resource moved, we can borrow 
 ownership. 
 Borrowing will not cause an object change ownership. 

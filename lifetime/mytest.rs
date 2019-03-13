@@ -52,4 +52,8 @@ fn main() {
 
 	println!("jmr {} kol {} sawi {} sawi {} ", jmr, kll, c, d);
 	println!("bym {} dns {} gri{} ", bym, dns, gri);
+	println!("jmr lagi {}", jmr);
+	let jjmr = jmr;
+	let jjjmr = jmr;
+	println!("jjjmr {}", jjjmr);
 }
