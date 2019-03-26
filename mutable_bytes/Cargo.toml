@@ -1,0 +1,8 @@
+[package]
+name = "mutable_bytes"
+version = "0.1.0"
+authors = ["hanky <hanky.adhi.chandra@ansvia.com>"]
+edition = "2018"
+
+[dependencies]
+bytes = "0.4"

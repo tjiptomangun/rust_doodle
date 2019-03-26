@@ -1,0 +1,15 @@
+[package]
+name = "actix-web-multipart"
+version = "0.1.0"
+authors = ["hanky <hanky.adhi.chandra@ansvia.com>"]
+edition = "2018"
+
+[dependencies]
+env_logger = "*"
+futures = "0.1"
+
+actix-web = "0.7"
+actix = "0.7"
+
+reqwest = "0.9.5"
+hyper = "0.12.22"
