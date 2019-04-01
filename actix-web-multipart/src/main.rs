@@ -67,6 +67,27 @@ pub fn handle_multipart_item(
 
 pub fn upload(req: HttpRequest<AppState>) -> FutureResponse<HttpResponse> {
 	req.state().counter.set(req.state().counter.get() + 1 );
+	let current_account = match req.headers().get("X-Access-Token") {
+		Some(at) => {
+			if at != "terong" {	
+				println!("failed");
+				panic!("failed")
+			}
+		}
+		_ =>{
+			println!("failed");
+			panic!("failed")
+		}
+	};
+	// .map(|at|{
+	// 	if at != "terong" {
+	// 		println!("failed");
+	// 		panic!("failed")
+	// 	}
+	// 	else{
+	// 		()
+	// 	}
+	// });
 	println!("{:?}", req.state().counter.get());
 	Box::new(
 		req.multipart()
